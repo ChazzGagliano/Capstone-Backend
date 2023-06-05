@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/movies" => "movies#index"
   post "/movie" => "movies#create"
-
+  delete "/favorite/:id" => "favorites#destroy"
 end
