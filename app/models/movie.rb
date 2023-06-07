@@ -1,4 +1,4 @@
 class Movie < ApplicationRecord
-  has_many :favorites
+  belongs_to :favorite
   has_many :users, through: :favorites
 end

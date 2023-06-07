@@ -1,12 +1,13 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.all
+    @favorites = current_user.favorites
     render :index
   end
 
+  
   def create
     @favorite = Favorite.new(
-    user_id: params[:user_id],
+    user_id: current_user.id,
     movie_id: params[:movie_id]
     )
     @favorite.save
