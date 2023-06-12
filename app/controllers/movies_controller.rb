@@ -15,20 +15,21 @@ class MoviesController < ApplicationController
     render :show
   end
 
-  # def actors
-  #   url = URI("https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr")
+  def actors
+    url = URI("https://imdb8.p.rapidapi.com/auto-complete?q=#{params[:movie]}l")
 
-  #   http = Net::HTTP.new(url.host, url.port)
-  #   http.use_ssl = true
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
 
-  #   request = Net::HTTP::Get.new(url)
-  #   request["X-RapidAPI-Key"] = Rails.application.          credentials.fetch(:movies_api)[:api_key]
-  #   request["X-RapidAPI-Host"] = 'imdb8.p.rapidapi.com'
+    request = Net::HTTP::Get.new(url)
+    request["X-RapidAPI-Key"] = Rails.application.          credentials.fetch(:movies_api)[:api_key]
+    request["X-RapidAPI-Host"] = 'imdb8.p.rapidapi.com'
 
-  #   response = http.request(request)
-  #   render json: response.read_body
-  #   actors = data["d"].map { |entry| entry["s"] }.flatten
-  #    end
+    response = http.request(request)
+    data = JSON.parse(response.read_body)
+    actors = data["d"].map { |entry| entry["s"] }
+    render json: actors
+  end
   
 
   end
