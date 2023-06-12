@@ -75,3 +75,6 @@ end
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem "rack-cors"
+gem "http"
+gem 'uri', '~> 0.10.0'
+gem 'net-http', '~> 0.3.2'
