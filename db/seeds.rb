@@ -1,3 +1,5 @@
+#copy and paste each array of data and paste into rails console
+puts SeedDump.dump(User)
 User.create!([
   {name: "john", email: "john@email.com", password_digest: "password"},
   {name: "tom", email: "tom@gmail.com", password_digest: "$2a$12$qjRpda/cwNOVbcPZV03hD.ZYvsYwLAxBHXFDlDExQ7QXUxR4lKnzi"},
@@ -10,6 +12,7 @@ User.create!([
   {name: "christie", email: "christie@email.com", password_digest: "$2a$12$4FuZ0D6C8IooF67oa6qpUu5vHGQxRy1sPfiYMq2G4TeoimLvWfW2e"},
   {name: "bob", email: "bob@email.com", password_digest: "$2a$12$Qtan0wBU3wPuQYxoiXiASOeHxFAHv.sLVGSx0H1w/Ri.CW/sPXxYC"}
 ])
+puts SeedDump.dump(Movie)
 Movie.create!([
   {name: "fight club", image_url: "https://resizing.flixster.com/M5Zk9bfFAAQkvTkkTkNlUu4z_sA=/300x300/v2/https://flxt.tmsimg.com/assets/p23069_v_h9_ab.jpg", description: "The two bored men form an underground club with strict rules and fight other men who are fed up with their mundane lives", category: "drama"},
   {name: "Moneyball", image_url: "https://www.sonypictures.com/sites/default/files/styles/max_560x840/public/chameleon/title-movie/229898_Moneyball_2011_1400x2100_US_1.jpg?itok=XqvCtAC0", description: "Billy Beane (Brad Pitt), general manager of the Oakland A's, one day has an epiphany: Baseball's conventional wisdom is all wrong. Faced with a tight budget, Beane must reinvent his team by outsmarting the richer ball clubs", category: "sports"},
@@ -17,9 +20,10 @@ Movie.create!([
   {name: "Good Will Hunting", image_url: "https://www.miramax.com/assets/726_GoodWillHunting_Catalog_Poster-BB_v2_Approved.png", description: "Will Hunting (Matt Damon) has a genius-level IQ but chooses to work as a janitor at MIT. When he solves a difficult graduate-level math problem, his talents are discovered by Professor Gerald Lambeau (Stellan Skarsgard), who decides to help the misguided youth reach his potential. When Will is arrested for attacking a police officer, Professor Lambeau makes a deal to get leniency for him if he will get treatment from therapist Sean Maguire (Robin Williams).", category: "drama"},
   {name: "Conjuring", image_url: "https://resizing.flixster.com/8Tb1MCZsLEQs_hf6oOOoDAjZxw8=/300x300/v2/https://flxt.tmsimg.com/assets/p9379266_p_v8_ah.jpg", description: "In 1970, paranormal investigators and demonologists Lorraine (Vera Farmiga) and Ed (Patrick Wilson) Warren are summoned to the home of Carolyn (Lili Taylor) and Roger (Ron Livingston) Perron. The Perrons and their five daughters have recently moved into a secluded farmhouse, where a supernatural presence has made itself known. Though the manifestations are relatively benign at first, events soon escalate in horrifying fashion, especially after the Warrens discover the house's macabre history.", category: "Horror"}
 ])
+puts SeedDump.dump(Favorite)
 Favorite.create!([
-  {user_id: 3, movie_id: 7},
-  {user_id: 3, movie_id: 8},
+  {user_id: 3, movie_id: 3},
+  {user_id: 3, movie_id: 4},
   {user_id: 3, movie_id: 9},
   {user_id: 7, movie_id: 7},
   {user_id: 7, movie_id: 9},
