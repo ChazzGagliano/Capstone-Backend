@@ -2,9 +2,9 @@ class FavoritesController < ApplicationController
   def index
     @favorites = current_user.favorites
     render :index
+    
   end
 
-  
   def create
     @favorite = Favorite.new(
     user_id: current_user.id,
